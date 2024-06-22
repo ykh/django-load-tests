@@ -1,0 +1,35 @@
+services:
+  locust-master:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: locust-master
+    networks:
+      - django-load-tests-nw
+    ports:
+      - "${LOCUST_WEB_UI_EXPOSED_PORT}:8089"
+    env_file:
+      - ./envs/locust.env
+    restart: unless-stopped
+    volumes:
+      - ./:/src/
+
+  locust-worker:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: locust-worker
+    networks:
+      - django-load-tests-nw
+    env_file:
+      - ./envs/locust.env
+    restart: unless-stopped
+    depends_on:
+      - locust-master
+    volumes:
+      - ./:/src/
+
+networks:
+  django-load-tests-nw:
+    external: true
+    name: django-load-tests-nw

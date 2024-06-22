@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - ./envs/app.env
+    command: >
+      sh -c "/src/scripts/run-app.sh"
+    volumes:
+      - ./app:/src/app
+      - ./scripts:/src/scripts
+    networks:
+      - django-load-tests-nw
+    ports:
+      - "${API_EXPOSED_PORT}:8000"
+
+networks:
+  django-load-tests-nw:
+    external: true
+    name: django-load-tests-nw
