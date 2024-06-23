@@ -33,9 +33,10 @@ This project aims to provide an overview of Django's performance under different
 
 #### Reports Table
 
-| Report ID | Method ID | Users | RU  | WT          | SGI      | SGI W | Duration | Requests | Fails | RPS | Avg RT | Min RT | Max RT |
-|-----------|-----------|-------|-----|-------------|----------|-------|----------|----------|-------|-----|--------|--------|--------|
-| R1        | A1        | 100   | 100 | 0.01 - 0.02 | Gunicorn | 25    | 3m       | 159075   | 0     | 909 | 93.01  | 29     | 1160   |
+| Report ID | Method ID | Machine ID | Users | RU  | WT          | SGI           | SGI W | Duration | Requests | Fails | RPS   | Avg RT | Min RT | Max RT |
+|-----------|-----------|------------|-------|-----|-------------|---------------|-------|----------|----------|-------|-------|--------|--------|--------|
+| R1        | A1        | M1         | 100   | 100 | 0.01 - 0.02 | Gunicorn      | 25    | 3m       | 159075   | 0     | 909   | 93.01  | 29     | 1160   |
+| R2        | A1        | M1         | 100   | 100 | 0.01 - 0.02 | Django Server | \-    | 3m       | 34496    | 0     | 196.5 | 493.12 | 76     | 5430   |
 
 #### Charts
 
@@ -46,3 +47,11 @@ This project aims to provide an overview of Django's performance under different
 ![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/012bbcba1f024d566c3a8dd6b1059e099bdddafcadc0a9f4.png)
 
 ![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/15ec1a0775d74b8e19ee98eba75d876337b50d4639078612.png)
+
+##### Report R2
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/049bc5f001b563949e0fbb9160d89b65858053ba89c13f18.png)
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/5e2b8c49aa8a85b55c60f2bdecc1799cafaa8299ebec603a.png)
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/c6fbe2ddf7ab3565defe77c58ff8d7166647336edc306588.png)
